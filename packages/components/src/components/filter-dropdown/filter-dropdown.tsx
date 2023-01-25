@@ -1,8 +1,16 @@
 import * as React from 'react';
-import PropTypes from 'prop-types';
 import { isMobile } from '@deriv/shared';
-import Dropdown from '../dropdown/dropdown.jsx';
-import SelectNative from '../select-native/select-native.jsx';
+import Dropdown from '../dropdown/index.js';
+import SelectNative from '../select-native/index.js';
+
+type FilterDropdownProps = {
+    dropdown_className: string;
+    dropdown_display_className: string;
+    filter_list: Array<any>;
+    handleFilterChange: (e: string) => void;
+    initial_filter: string;
+    initial_selected_filter: string;
+};
 
 const FilterDropdown = ({
     dropdown_className,
@@ -10,17 +18,17 @@ const FilterDropdown = ({
     filter_list,
     handleFilterChange,
     initial_selected_filter,
-}) => {
+}: FilterDropdownProps) => {
     const [selected_filter, setSelectedFilter] = React.useState(initial_selected_filter ?? filter_list?.[0]?.value);
 
-    const onChange = event => {
+    function onChange(event: React.ChangeEvent<HTMLInputElement>) {
         setSelectedFilter(event.target.value);
 
         if (typeof handleFilterChange === 'function') {
             handleFilterChange(event.target.value);
         }
-    };
-
+    }
+    // Todo once they change this component
     if (isMobile()) {
         return (
             <SelectNative
@@ -45,15 +53,6 @@ const FilterDropdown = ({
             onChange={onChange}
         />
     );
-};
-
-FilterDropdown.propTypes = {
-    dropdown_className: PropTypes.string,
-    dropdown_display_className: PropTypes.string,
-    filter_list: PropTypes.array.isRequired,
-    handleFilterChange: PropTypes.func,
-    initial_filter: PropTypes.string,
-    initial_selected_filter: PropTypes.string,
 };
 
 export default FilterDropdown;
