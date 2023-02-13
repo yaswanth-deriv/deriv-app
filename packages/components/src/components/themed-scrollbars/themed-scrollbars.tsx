@@ -6,7 +6,7 @@ type TThemedScrollbars = {
     autohide?: boolean;
     className?: string;
     has_horizontal?: boolean;
-    height?: string;
+    height?: number | string;
     is_bypassed?: boolean;
     is_only_horizontal?: boolean;
     is_only_horizontal_overlay?: boolean;
@@ -15,6 +15,7 @@ type TThemedScrollbars = {
     refSetter?: RefObject<HTMLDivElement> | null;
     style?: React.CSSProperties;
     width?: string;
+    testId?: string;
 };
 
 const ThemedScrollbars = ({
@@ -27,6 +28,7 @@ const ThemedScrollbars = ({
     is_only_horizontal,
     is_only_horizontal_overlay,
     is_scrollbar_hidden,
+    testId = 'dt_themed_scrollbars',
     onScroll,
     refSetter = null,
     style = {},
@@ -38,7 +40,7 @@ const ThemedScrollbars = ({
 
     return (
         <div
-            data-testid='dt_themed_scrollbars'
+            data-testid={testId}
             ref={hoverRef}
             className={classNames('dc-themed-scrollbars', className, {
                 'dc-themed-scrollbars__autohide': autohide,
