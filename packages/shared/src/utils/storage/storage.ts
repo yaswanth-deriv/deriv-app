@@ -128,7 +128,7 @@ InScriptStore.prototype = {
         if (typeof this.get(key) === 'function') this.get(key)();
     },
 };
-
+Object.freeze(InScriptStore.prototype);
 export const State = new (InScriptStore as any)();
 State.prototype = InScriptStore.prototype;
 /**
