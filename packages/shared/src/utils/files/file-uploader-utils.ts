@@ -40,7 +40,7 @@ export const truncateFileName = (file: TFile, limit: number) => {
 };
 
 export const getFileExtension = (file: TFile) => {
-    // added new regex
+    // added new regex value
     const f = file?.type?.match(/.*\/([^\/]*)$/);
     return f && f[0];
 };
