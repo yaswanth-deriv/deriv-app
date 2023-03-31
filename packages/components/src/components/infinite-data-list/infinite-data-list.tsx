@@ -10,7 +10,7 @@ type TInfiniteDatalist = {
     has_more_items_to_load: boolean;
     items: TRow[];
     keyMapperFn?: (row: TRow) => number | string;
-    loadMoreRowsFn: (params: IndexRange) => Promise<any>;
+    loadMoreRowsFn: <T>(params: IndexRange) => Promise<T>;
     onScroll: () => void;
     rowRenderer: TRowRenderer;
     has_filler: boolean;
