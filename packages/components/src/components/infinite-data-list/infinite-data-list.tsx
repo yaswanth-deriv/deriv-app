@@ -1,17 +1,9 @@
-/* eslint @typescript-eslint/triple-slash-reference: "off" */
-/// <reference path="../infiniteloader/InfiniteLoader.d.ts" />
 import React from 'react';
-import { InfiniteLoader } from '@enykeev/react-virtualized/dist/es/InfiniteLoader';
+import { InfiniteLoader as _InfiniteLoader } from 'react-virtualized/dist/es/InfiniteLoader';
 import DataList, { TRow, TRowRenderer } from '../data-list/data-list';
+import { InfiniteLoaderProps, Index, IndexRange } from 'react-virtualized';
 
-export type Index = {
-    index: number;
-};
-export type IndexRange = {
-    startIndex: number;
-    stopIndex: number;
-};
-
+const InfiniteLoader = _InfiniteLoader as unknown as React.FC<InfiniteLoaderProps>;
 type TInfiniteDatalist = {
     className: string;
     data_list_className: string;
