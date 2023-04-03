@@ -11,6 +11,7 @@
     "include": [
         "src",
         "./@types/react-div-100vh/react-div-100vh-config.d.ts",
+        "./@types/@enykeev/react-virtualized/dist/es/InfiniteLoader.d.ts",
         "../../utils.d.ts"
     ]
 }
