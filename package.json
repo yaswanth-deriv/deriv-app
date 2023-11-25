@@ -91,7 +91,7 @@
         "prepare": "husky install"
     },
     "dependencies": {
-        "@babel/preset-typescript": "^7.16.5",
+        "@babel/preset-typescript": "^7.23.2",
         "@deriv/analytics": "^1.4.1",
         "@sendbird/chat": "^4.9.7",
         "@types/react-transition-group": "^4.4.4",
