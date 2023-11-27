@@ -41,7 +41,7 @@
         "@deriv/shared": "^1.0.0",
         "@deriv/translations": "^1.0.0",
         "binary-utils": "^4.23.0",
-        "blockly": "3.20191014.4",
+        "blockly": "9.2.0",
         "file-saver": "^2.0.2",
         "immutable": "^3.8.2",
         "localforage": "^1.9.0",
